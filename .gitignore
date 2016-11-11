@@ -1,0 +1,10 @@
+# kaldi
+kaldi/
+!kaldi/src/ivectorbin/Makefile
+!kaldi/src/ivectorbin/ivector-extract-server.cc
+
+# ivector-extract-client
+ivector-extract-client/ivector-extract-client
+
+# Data
+workflow/
