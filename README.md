@@ -50,13 +50,10 @@ path.sh 						# include paths
 server.sh 						# start server
 client.sh 						# start client
 terminate.sh 					# client shortcut to terminate server
+```
 
 ## To-do
 
 1. Patch Kaldi automatically
 1. Handle different $KALDI_ROOT
-1. Only need to take sph file, generate the rest of the input files automatically
-```
-
-
-		
+1. Only need to take sph file, generate the rest of the input files automatically	
