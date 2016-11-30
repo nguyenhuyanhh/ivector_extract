@@ -9,8 +9,11 @@ models="./workflow/models"
 data="./workflow/data"
 result="./workflow/result"
 
-# gmm="fgmm-global-to-gmm $models/final.ubm -|" # if there is no final.dubm
-gmm="$models/final.dubm"
+if [ -f $models/final.dubm ]; then
+	gmm="$models/final.dubm"
+else
+	gmm="fgmm-global-to-gmm $models/final.ubm -|"
+fi
 fgmm="$models/final.ubm"
 ivector="$models/final.ie"
 

@@ -9,7 +9,11 @@ The code merges 3 programs into one, load the models at the beginning and then a
 ## Setup
 
 1. Clone the project
-2. Run the Kaldi patch script: `$ ./patch_kaldi.sh /path/to/kaldi/root`
+1. Add KALDI_ROOT to your environment variables by editing `~/.bashrc`
+1. Run the init script: `$ ./init.sh`
+1. Run the server script: `$ ./server.sh`
+1. Open another shell, run the client script: `$ ./client.sh`
+1. To terminate, use the client shell and run the termination script: `$ ./terminate.sh`
 
 ## Structure of the repository
 
@@ -50,7 +54,7 @@ workflow/
 		speaker_mean.log
 	utils/ 						# utilities, only run.pl needed
 		run.pl
-patch_kaldi.sh 					# patch Kaldi with ivector-extract-server
+init.sh 						# make client, patch Kaldi with server
 path.sh 						# include paths
 server.sh 						# start server
 client.sh 						# start client
