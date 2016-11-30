@@ -6,15 +6,19 @@ Ivector extraction in Kaldi is done through invoking 3 programs running in a pip
 
 The code merges 3 programs into one, load the models at the beginning and then act as a server, processing a feature from a request and return the results.
 
+## Setup
+
+1. Clone the project
+2. Run the Kaldi patch script: `$ ./patch_kaldi.sh /path/to/kaldi/root`
+
 ## Structure of the repository
 
 ```
-kaldi/src/ivectorbin/
+src/
 	ivector-extract-server.cc 	# server code
-	Makefile 					# updated Makefile including the server code
-ivector-extract-client/
 	ivector-extract-client.cc 	# client code
-	Makefile 					# for the client
+bin/
+	ivector-extract-client		# client binary
 workflow/
 	conf/						# config for compute-mfcc and compute-vad
 		mfcc.conf
@@ -46,6 +50,7 @@ workflow/
 		speaker_mean.log
 	utils/ 						# utilities, only run.pl needed
 		run.pl
+patch_kaldi.sh 					# patch Kaldi with ivector-extract-server
 path.sh 						# include paths
 server.sh 						# start server
 client.sh 						# start client
@@ -54,6 +59,4 @@ terminate.sh 					# client shortcut to terminate server
 
 ## To-do
 
-1. Patch Kaldi automatically
-1. Handle different $KALDI_ROOT
 1. Only need to take sph file, generate the rest of the input files automatically	
